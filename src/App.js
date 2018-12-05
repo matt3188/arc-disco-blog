@@ -11,7 +11,7 @@ class App extends Component {
   };
 
   componentWillMount() {
-    const api_url = "http://www.arcdisco.co.uk/wp-json/wp/v2/posts";
+    const api_url = "https://www.arcdisco.co.uk/wp-json/wp/v2/posts";
 
     axios
       .get(`${api_url}`, {
