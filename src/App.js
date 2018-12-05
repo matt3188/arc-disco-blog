@@ -7,7 +7,8 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    posts: []
+    posts: [],
+    loading: true
   };
 
   componentWillMount() {
@@ -20,7 +21,7 @@ class App extends Component {
         }
       })
       .then(response => {
-        this.setState({ posts: response.data });
+        this.setState({ posts: response.data, loading: false });
       })
       .catch(error => {
         console.log("An error occured:", error);
@@ -28,14 +29,14 @@ class App extends Component {
   }
 
   render() {
-    const { posts } = this.state;
+    const { posts, loading } = this.state;
     return (
       <div className="App">
         <header className="c-header">
           <h1>Welcome</h1>
-          {posts.map(post => (
-            <Post key={post.id} {...post} />
-          ))}
+          {loading
+            ? "Loading..."
+            : posts.map(post => <Post key={post.id} {...post} />)}
         </header>
       </div>
     );
