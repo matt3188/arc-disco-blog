@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/arc-disco-blog/precache-manifest.4005611c457077c52ba3e3a8db58250b.js"
+  "/arc-disco-blog/precache-manifest.de4c958d706f3b536d69028ad56c3f1d.js"
 );
 
 workbox.clientsClaim();
