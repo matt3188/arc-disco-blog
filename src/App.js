@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import { getPosts } from "./utils/api";
+
+// import Header from "./Header";
+import Home from "./Home";
 import Post from "./Post";
-
-import "./App.css";
 
 class App extends Component {
   state = {
@@ -12,33 +14,40 @@ class App extends Component {
   };
 
   componentWillMount() {
-    const api_url = "https://www.arcdisco.co.uk/wp-json/wp/v2/posts";
-
-    axios
-      .get(`${api_url}`, {
-        params: {
-          _sort: "createdAt:desc"
-        }
-      })
-      .then(response => {
-        this.setState({ posts: response.data, loading: false });
-      })
-      .catch(error => {
-        console.log("An error occured:", error);
-      });
+    getPosts().then(response =>
+      this.setState({ posts: response, loading: false })
+    );
+  }
+  getPostById(id) {
+    return this.state.posts.filter(item => id === item.id.toString())[0];
   }
 
   render() {
     const { posts, loading } = this.state;
+    console.log(loading);
+
     return (
-      <div className="App">
-        <header className="c-header">
-          <h1>Welcome</h1>
-          {loading
-            ? "Loading..."
-            : posts.map(post => <Post key={post.id} {...post} />)}
-        </header>
-      </div>
+      <Router>
+        <div className="app">
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <Home {...props} loading={loading} posts={posts} />
+            )}
+          />
+          <Route
+            path="/:id"
+            render={props => (
+              <Post
+                {...props}
+                loading={loading}
+                post={this.getPostById(props.match.params.id)}
+              />
+            )}
+          />
+        </div>
+      </Router>
     );
   }
 }

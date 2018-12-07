@@ -1,9 +1,24 @@
 import React from "react";
 
-const Post = props => (
+const Post = ({ post, loading }) => (
   <React.Fragment>
-    <h1>{props.title.rendered}</h1>
-    <div dangerouslySetInnerHTML={{ __html: props.content.rendered }} />
+    <div className="container">
+      <div className="row">
+        <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          {console.log(post)}
+          {loading ? (
+            "Loading..."
+          ) : (
+            <div>
+              <h1>{post.title.rendered}</h1>
+              <div
+                dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
   </React.Fragment>
 );
 
