@@ -27,7 +27,7 @@ class App extends Component {
     console.log(loading);
 
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL + "/"}>
         <div className="app">
           <Header />
           <Route
