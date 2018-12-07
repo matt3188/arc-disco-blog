@@ -16,3 +16,17 @@ body {
   padding: 1rem;
   color: white;
 }
+.c-header > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .c-header > div {
+    flex-direction: row;
+  }
+}
+.c-header a {
+  color: white;
+}

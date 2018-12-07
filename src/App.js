@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import { getPosts } from "./utils/api";
 
-// import Header from "./Header";
+import Header from "./Header";
 import Home from "./Home";
 import Post from "./Post";
 
@@ -29,6 +29,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
+          <Header />
           <Route
             exact
             path="/"
