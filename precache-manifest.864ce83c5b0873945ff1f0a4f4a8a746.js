@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/arc-disco-blog/static/js/runtime~main.153aff8c.js"
   },
   {
-    "revision": "1e445f0f5848754d9e8e",
-    "url": "/arc-disco-blog/static/js/main.1e445f0f.chunk.js"
+    "revision": "eb50628a92ab6d9a867e",
+    "url": "/arc-disco-blog/static/js/main.eb50628a.chunk.js"
   },
   {
     "revision": "65e5a41409e1d38fba95",
     "url": "/arc-disco-blog/static/js/1.65e5a414.chunk.js"
   },
   {
-    "revision": "1e445f0f5848754d9e8e",
+    "revision": "eb50628a92ab6d9a867e",
     "url": "/arc-disco-blog/static/css/main.59d2c666.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/arc-disco-blog/static/css/1.8f17a430.chunk.css"
   },
   {
-    "revision": "d3782968cae41a580d01867a45f67f67",
+    "revision": "7b8ac4627247e5dfb0e480a2f54e1116",
     "url": "/arc-disco-blog/index.html"
   }
 ];
