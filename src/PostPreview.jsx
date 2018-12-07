@@ -25,7 +25,9 @@ class PostPreview extends Component {
             className="card-text"
             dangerouslySetInnerHTML={{ __html: excerpt }}
           />
-          <Link to={`/${this.props.id}`}>Read more</Link>
+          <Link to={`${process.env.PUBLIC_URL}/${this.props.id}`}>
+            Read more
+          </Link>
         </div>
       </div>
     );
