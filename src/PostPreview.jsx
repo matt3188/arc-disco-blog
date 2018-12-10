@@ -15,7 +15,7 @@ class PostPreview extends Component {
     const featureImage = this.props.acf.feature_image;
 
     return (
-      <div className="card mb-4">
+      <div className="card mb-3">
         {featureImage && (
           <img src={featureImage.url} className="card-img-top" alt="" />
         )}
