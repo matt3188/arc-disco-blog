@@ -4,8 +4,9 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import { getPosts } from "./utils/api";
 
-import Routes from "./Routes";
 import Header from "./Header";
+import Routes from "./Routes";
+import Footer from "./Footer";
 
 class App extends Component {
   state = {
@@ -34,6 +35,8 @@ class App extends Component {
             </TransitionGroup>
           )}
         />
+
+        <Footer />
       </div>
     );
   }
