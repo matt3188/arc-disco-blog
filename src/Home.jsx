@@ -10,10 +10,12 @@ class Home extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            {loading
-              ? "Loading..."
-              : posts.map(post => <PostPreview key={post.id} {...post} />)}
+          <div className="col">
+            <div className="card-columns">
+              {loading
+                ? "Loading..."
+                : posts.map(post => <PostPreview key={post.id} {...post} />)}
+            </div>
           </div>
         </div>
       </div>
