@@ -2,7 +2,7 @@
   "name": "arc-disco-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://matt3188.github.io/arc-disco-blog/",
+  "homepage": "https://blog.arcdisco.co.uk/",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
