@@ -5,7 +5,6 @@ import PostPreview from "./PostPreview";
 class Home extends Component {
   render() {
     const { loading, posts } = this.props;
-    console.log(loading);
 
     return (
       <div className="container">
