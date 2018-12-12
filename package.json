@@ -5,6 +5,8 @@
   "homepage": "https://blog.arcdisco.co.uk/",
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "bootstrap": "^4.1.3",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
