@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import { getPosts } from "./utils/api";
+import { getPosts, getPages } from "./utils/api";
 
 import Header from "./Header";
 import Routes from "./Routes";
@@ -11,6 +11,7 @@ import Footer from "./Footer";
 class App extends Component {
   state = {
     posts: [],
+    pages: [],
     loading: true
   };
 
@@ -18,10 +19,11 @@ class App extends Component {
     getPosts().then(response =>
       this.setState({ posts: response, loading: false })
     );
+    getPages().then(response => this.setState({ pages: response }));
   }
 
   render() {
-    const { posts, loading } = this.state;
+    const { posts, pages, loading } = this.state;
 
     return (
       <div className="app">
@@ -36,7 +38,7 @@ class App extends Component {
           )}
         />
 
-        <Footer />
+        <Footer pages={pages} />
       </div>
     );
   }

@@ -1,11 +1,21 @@
 import React from "react";
 
-const Footer = () => (
+const Footer = props => (
   <footer>
     <div className="container">
       <div className="row">
         <div className="col-md-4">
-          <p>Footer</p>
+          <p>Links</p>
+          <ul>
+            {props.pages.map(
+              page =>
+                page.parent === 0 && (
+                  <li key={page.title.rendered}>
+                    <a href={page.link}>{page.title.rendered}</a>
+                  </li>
+                )
+            )}
+          </ul>
         </div>
       </div>
     </div>
