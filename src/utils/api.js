@@ -24,12 +24,8 @@ export const getPost = id =>
 
 export const getPages = () =>
   axios
-    .get(`${api_url}/pages`, {
-      params: {
-        _sort: "createdAt:asc"
-      }
-    })
+    .get(`${api_url}/pages`)
     .then(response => response.data)
     .catch(error => {
-      console.log("An error occured:", error);
+      console.log("An error occured: ", error);
     });
