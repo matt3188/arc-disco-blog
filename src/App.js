@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import { getPosts, getPages } from "./utils/api";
+import { getPosts, getPages } from "./actions";
 
 import Header from "./Header";
 import Routes from "./Routes";

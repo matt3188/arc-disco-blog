@@ -1,6 +1,18 @@
 import axios from "axios";
 
-const api_url = "https://www.arcdisco.co.uk/wp-json/wp/v2";
+export const FETCH_POSTS = "FETCH_POSTS";
+
+const site_url = "https://www.arcdisco.co.uk";
+const api_url = `${site_url}/wp-json/wp/v2`;
+
+export const fetchPosts = (post_type = "posts") => dispatch => {
+  axios.get(`${api_url}/${post_type}?_embed`).then(response => {
+    dispatch({
+      type: FETCH_POSTS,
+      payload: response.data
+    });
+  });
+};
 
 export const getPosts = () =>
   axios
@@ -27,5 +39,5 @@ export const getPages = () =>
     .get(`${api_url}/pages`)
     .then(response => response.data)
     .catch(error => {
-      console.log("An error occured: ", error);
+      console.log("An error occured:", error);
     });
